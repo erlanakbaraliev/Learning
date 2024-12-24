@@ -1,0 +1,19 @@
+#advancedSearchLabel label {
+    color:#F28B82;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+}
+body {
+    background-color: rgba(0, 0, 0, 0.759);
+    margin-left: 25px;
+}
+#pagesDiv {
+    float: right;
+    margin-right: 3;
+}
+span {
+    color: #E8EAED;
+}
+label {
+    color: #969BA1;
+}

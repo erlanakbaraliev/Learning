@@ -1,0 +1,12 @@
+form #searchInput {
+  width: 746px;
+  border-radius: 25px;
+  height: 49px;
+}
+.position-absolute {
+    right: 0px;
+    margin: 3;  
+}
+body {
+  background-color: rgba(0, 0, 0, 0.759);
+}

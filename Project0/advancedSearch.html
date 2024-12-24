@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesAdvancedSearch.css">
+    <title>Document</title>
+</head>
+<body>
+    <head></head>
+    <div id="pagesDiv">
+        <ul>
+            <li>    
+                <a href="imageSearch.html">Image Search</a>
+            </li>
+            <li>
+                <a href="index.html">Simple Search</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="advancedSearchLabel">
+        <label>Advanced Search</label>
+    </div>
+    <div id="SearchDiv">
+        <span>Find pages with...</span>
+        <form action="https://www.google.com/search" class="form-group">
+            <div>
+                <label for="allWords">all these words:</label>
+                <input id="allWords" type="text" value autofocus="autofocus">
+            </div>
+            <div>
+                <label for="exactWords">this exact word or phrase:</label>
+                <input id="exactWords" type="text" value>
+            </div>
+            <div>
+                <label for="anyWords">any of these words:</label>
+                <input id="anyWords" type="text" value>
+            </div>
+            <div>
+                <label for="noneWords">none of these words:</label>
+                <input id="noneWords" type="text" value>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
