@@ -1,11 +1,29 @@
-ul {
-    float: right;
+body {
+    // margin:0x;
+    // height: 100vh;
+    font-family: Arial, sans-serif;
 }
-form {
-    background-color: azure;
 
-    #searchInput {
-        width: 746px;
-        border-radius: 25px;
+input {
+    font-size: 16px;
+    width: 300px;
+    padding: 13px
+}
+
+.header {
+    display: flex;
+    align-items: center;
+
+    a {
+        color: black;
+        padding: 10px;
     }
+}
+
+.search-container {
+    $input_field_border_radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
 }
