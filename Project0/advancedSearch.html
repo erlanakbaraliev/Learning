@@ -7,48 +7,23 @@
     <meta name="keywords" content="search, Google, advanced search">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylesAdvancedSearch.css">
+    <link rel="stylesheet" href="style/stylesAdvancedSearch.css">
     <title>Document</title>
 </head>
 <body>
-    <div id="pagesDiv">
+    <header>
+        <img src="images/GoogleColorfull.png" alt="Google logo">
         <ul>
-            <li>    
-                <a href="imageSearch.html" aria-label="Go to image search">Image Search</a>
-            </li>
-            <li>
-                <a href="index.html" aria-label="Go to simple search">Search</a>
-            </li>
+            <li><a href="index.html">Search</a></li>
+            <li><a href="imageSearch.html">Image Search</a></li>
         </ul>
-    </div>
-
-    <div id="advancedSearchLabel">
-        <label>Advanced Search</label>
-    </div>
+    </header>
+    <h3 class="advancedSearchBar">Advanced Search</h3>
     <hr>
-    <div id="SearchDiv">
-        <span>Find pages with...</span>
-        <form action="https://www.google.com/search" class="form-group">
-            <div class="mb-3">
-                <label for="allWords">all these words:</label>
-                <input id="allWords" type="text" value autofocus="autofocus" name="as_q">
-            </div>
-            <div class="mb-3">
-                <label for="exactWords">this exact word or phrase:</label>
-                <input id="exactWords" type="text" value name="as_epq">
-            </div>
-            <div class="mb-3">
-                <label for="anyWords">any of these words:</label>
-                <input id="anyWords" type="text" value name="as_oq">
-            </div>
-            <div class="mb-3">
-                <label for="noneWords">none of these words:</label>
-                <input id="noneWords" type="text" value name="as_eq">
-            </div>
-            <div class="mb-3">
-                <input class="btn btn-primary" type="submit" value="Google Search">
-            </div>
-        </form>
-    </div>
+    <form action="https://www.google.com/search">
+        <table>
+        <tr><td><h6>Find pages with...</h6></td></tr>
+        </table>
+    </form> 
 </body>
 </html>
