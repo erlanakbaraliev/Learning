@@ -8,13 +8,27 @@
     <title>Search</title>
 </head>
 <body>
-    <section>
+    <form action="https://www.google.com/search">
         <header>
             <ul>
                 <li><a href="imageSearch.html">Image Search</a></li>
                 <li><a href="advancedSearch.html">Advanced Search</a></li>
             </ul>
         </header>
-    </section>
+        <div class="main">
+            <img src="images/GoogleColorfull.png" alt="Google logo">
+            <div class="searchBox">
+                <input type="text" class="search" name="q">
+                <div class="icons">
+                    <img src="images/search.png">
+                </div>
+            </div>
+            <div class="buttons">
+                <button type="submit">Google Search</button>
+                <!-- <input type="submit" value="Google Search"> -->
+                <button type="button" onclick="window.location.href='https://doodles.google/'">I am feeling lucky</button>
+            </div>
+        </div>
+    </form>
 </body>
 </html>

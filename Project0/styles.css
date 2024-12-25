@@ -5,7 +5,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-section {
+form {
   position: relative;
   width: 100%;
   display: flex;
@@ -13,7 +13,7 @@ section {
   align-items: center;
   min-height: 100vh;
 }
-section header {
+form header {
   position: absolute;
   top: 0;
   width: 100%;
@@ -22,19 +22,78 @@ section header {
   margin-right: 20px;
 }
 
-section header ul {
+form header ul {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-section header ul li {
+form header ul li {
   list-style: none;
   margin-left: 20px;
 }
 
-section header ul li a {
+form header ul li a {
   text-decoration: none;
   font-size: 14px;
   color: #111;
+}
+
+form .main {
+  display: flex;
+  align-items: center;
+  width: 580px;
+  flex-direction: column;
+}
+
+form .main .searchBox {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+
+form .main .searchBox .search {
+  width: 100%;
+  padding: 13px;;
+  padding-left: 45px;
+  padding-right: 60px;
+  border-radius: 30px;
+  border: 1px solid black;
+  cursor: auto;
+}
+
+form .main .searchBox .icons {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+form .main img {
+  width: 50%;
+}
+form .main .searchBox .icons img {
+  width: 5%;;
+}
+
+form .main .buttons {
+  margin-top: 20px;
+}
+
+form .main .buttons button, input {
+  margin-right: 5px;
+  padding: 12px 20px;
+  color: #555;
+  font-size: 14px;
+  border:none;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  outline: none;
+}
+
+form .main .buttons button:hover, input:hover {
+  border: 1px solid #ccc;
 }
