@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced search page for Google Search">
+    <meta name="keywords" content="search, Google, advanced search">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/stylesAdvancedSearch.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <img src="images/GoogleColorfull.png" alt="Google logo">
+        <ul>
+            <li><a href="index.html">Search</a></li>
+            <li><a href="imageSearch.html">Image Search</a></li>
+        </ul>
+    </header>
+    <h3 class="advancedSearchBar">Advanced Search</h3>
+    <hr>
+    <form action="https://www.google.com/search">
+        <table>
+            <tr><td><h6>Find pages with...</h6></td></tr>
+            <tr>
+                <td class="label">all these words:</td>
+                <td><input type="txt" name="as_q"></td>
+                <td class="labelExample">Type the important words: tri-colour rat terrier</td>
+            </tr>
+            <tr>
+                <td class="label">this exact word or phrase:</td>
+                <td><input type="txt" name="as_epq"></td>
+                <td class="labelExample">Put exact words in quotes: "rat terrier"</td>
+            </tr>
+            <tr>
+                <td class="label">any of these words:</td>
+                <td><input type="txt" name="as_oq"></td>
+                <td class="labelExample">Type OR between all the words you want: miniature OR standard</td>
+            </tr>
+            <tr>
+                <td class="label">none of these words:</td>
+                <td><input type="txt" name="as_eq"></td>
+                <td class="labelExample">Put a minus sign just before words that you don't want: -rodent, -"Jack Russell"</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div class="submitButton">
+                        <button type="submit" >Advanced Search</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form> 
+</body>
+</html>
