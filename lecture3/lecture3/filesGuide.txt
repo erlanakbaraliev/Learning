@@ -1,3 +1,0 @@
-manage.py: to execute commands to manage the whole project
-settings.py: 
-urls.py: table of urls
