@@ -1,0 +1,2 @@
+python manage.py makemigrations -> git commit of databases
+python manage.py migrate -> git push origin main
