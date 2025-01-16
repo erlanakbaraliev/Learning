@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const accessKey = "dd52446fe78e2047b06ee73f8eaac9c4"
+
+        document.addEventListener("DOMContentLoaded", ()=>{
+            document.querySelector("form").onsubmit = function(){
+                
+                fetch(`https://api.exchangeratesapi.io/latest?access_key=${accessKey}&format=1`)
+                .then(response => response.json())
+                .then(data => {
+                    const inputCurrency = document.querySelector("input").value.trim().toUpperCase()
+                    const rates = data["rates"]
+                    if(rates[inputCurrency] != undefined) {
+                        const res = rates[inputCurrency].toFixed(0)
+                        document.querySelector("p").textContent = `1 EUR is equal to ${res} ${inputCurrency}`
+                    }
+                    else {
+                        document.querySelector("p").textContent = `You entered the wrong currency`
+                    }
+
+                })
+                .catch(error=>{
+                    console.log(error)
+                })
+                
+                return false
+            }
+        })
+    </script>
+</head>
+<body>
+    <h1>EUR based currency converter</h1>
+    <form>
+        <input type="text" placeholder="Enter a currency">
+        <button type="submit">Convert</button>
+        <p id="result">1 EUR is equal to user_input</p>
+    </form>
+</body>
+</html>
