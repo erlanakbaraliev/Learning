@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let counter = 1
+        const quantity = 20
+
+        document.addEventListener("DOMContentLoaded", load)
+
+        window.onscroll = ()=>{
+            if(window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                load()
+            }
+        }
+
+        window.addEventListener('click', event => {
+            event.target.parentElement.style.animationPlayState = 'running'
+            event.target.parentElement.addEventListener('animationend', ()=>{
+                event.target.parentElement.remove()
+            })
+            // event.target.parentElement.remove()
+        })
+
+        function load() {
+            let start = counter
+            let end = start + quantity -1
+            counter = end + 1
+
+            fetch(`singlepage2/posts?start=${start}&end=${end}`)
+            .then(response => response.json())
+            .then(data => {
+                data["posts"].forEach(add_post)
+            })
+        }
+
+        function add_post(content) {
+            const posts = document.querySelector("#posts")
+            
+            const newPost = document.createElement("div")
+            newPost.className = "post"
+            newPost.innerHTML = `${content} <button class='hide'>Hide</button>`
+
+            posts.append(newPost)
+        }
+    </script>
+    <style>
+        @keyframes hide {
+            0% {
+                opacity: 1;
+                /* height: 100%; */
+                /* line-height: 100%; */
+                padding: 20px;
+                margin-bottom: 10px;
+            }
+            75% {
+                opacity: 0;
+                /* height: 100%; */
+                /* line-height: 100%; */
+                padding: 20px;
+                margin-bottom: 10px;
+            }
+            100% {
+                opacity: 0;
+                height: 0px;
+                line-height: 0px;
+                padding: 0px;
+                margin-bottom: 0px;
+            }
+        }
+
+        .post {
+            background-color: #77dd11;
+            padding: 20px;
+            margin-bottom: 10px;
+            animation-name: hide;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+        body {
+            padding-bottom: 50px;
+        }
+        .post button {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="posts"></div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onscroll = ()=> {
+            if(window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                document.querySelector('body').style.backgroundColor = "green"
+            }
+            else {
+                document.querySelector("body").style.backgroundColor = "white"
+            }
+        }
+
+        window.onpopstate = function(event) {
+            display(event.state.section)
+        }
+        function display(pagenum) {
+            fetch(`/sections/${pagenum}`)
+            .then(response => response.text())
+            .then((data)=>{
+                document.querySelector("div").innerHTML = data
+            })
+        }
+
+        document.addEventListener("DOMContentLoaded", ()=>{
+            document.querySelectorAll("button").forEach(button=>{
+                button.onclick = function() {
+                    history.pushState({section: button.dataset.section}, "", `section${button.dataset.section}`)
+                    display(this.dataset.section)
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <button data-section="1">Page1</button>
+    <button data-section="2">Page2</button>
+    <button data-section="3">Page3</button>
+    
+    <div id="content"></div>
+
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>100</p>
+</body>
+</html>

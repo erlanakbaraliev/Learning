@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Document</title>
+    <style>
+        #app {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: sans-serif;
+        }
+        #app div #problem {
+            font-size: 72px;
+            display: flex;
+            justify-content: center;
+        }
+        #app div #score {
+            display: flex;
+            justify-content: center;
+        }
+        .incorrect {
+            color:red
+        }
+        .correct {
+            color: black;
+        }
+        #winner {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+
+        function App() {
+            const [state, setState] = React.useState({
+                num1: 5,
+                num2: 4,
+                response: "",
+                score: 0,
+                incorrect: false
+            })
+            const numLimit = 10
+
+            function updateInput(event) {
+                setState({
+                    ...state,
+                    response: event.target.value
+                })
+            }
+            
+            function updateResponse(event) {
+                if(event.key === "Enter") {
+                    const response = parseInt(event.target.value)
+                    if(state.num1+state.num2 === response) {
+                        setState({
+                            num1: Math.floor(Math.random()*numLimit),
+                            num2: Math.floor(Math.random()*numLimit),
+                            response: "",
+                            score: state.score+1,
+                            incorrect: false
+                        })
+
+                    }
+                    else {
+                        setState({
+                            ...state,
+                            score: state.score-1,
+                            incorrect: true
+                        })
+                    }
+                }
+            }
+
+            if(state.score === 10) {
+                return (
+                    <h1 id="winner">You won!😁🤝</h1>
+                )
+            }
+            return (
+                <div>
+                    <p id="problem" className={state.incorrect? "incorrect": "correct"}>{state.num1} + {state.num2}</p>
+                    <input value={state.response} onChange={updateInput} onKeyPress={updateResponse} autoFocus={true}/>
+                    <p id="score">Score: {state.score}</p>
+                </div>
+            )
+        }
+
+        ReactDOM.render(<App/>, document.querySelector("#app"))
+    </script>
+</body>
+</html>

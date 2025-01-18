@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes move {
+            0% {
+                left: 0%;
+            }
+            50% {
+                left: 50%;
+            }
+            60% {
+                left: 0%;
+            }
+        }
+        h1 {
+            position: relative;
+            animation-name: move;
+            animation-duration: 5s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const header = document.querySelector("h1")
+            header.style.animationPlayState = 'paused'
+
+            document.querySelector('button').onclick = ()=>{
+                console.log(header.animationPlayState)
+                if(header.style.animationPlayState === 'paused') {
+                    header.style.animationPlayState = 'running'
+                }
+                else {
+                    header.style.animationPlayState = 'paused'
+                }
+            }
+        })
+    </script>
+</head>
+<body>
+    <button>Click me</button>
+    <h1>Welcome</h1>
+</body>
+</html>
