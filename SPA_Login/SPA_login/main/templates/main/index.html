@@ -1,0 +1,22 @@
+{% extends "main/layout.html" %}
+
+{% block body %}
+    <div id="main" style="display: block;">
+        <h1>Main</h1>
+    </div>
+    <div id="login_view" style="display: none;">
+        <h1>Login</h1>
+        <p id="login_error" style="color:red; display: none;"></p>
+
+        <form id="loginForm" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" id="username" name="username" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+{% endblock %}
